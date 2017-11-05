@@ -1,0 +1,136 @@
+@import '_reset';
+@import '_mixin';
+@import '_reuse.scss';
+
+
+
+/****** main css ******/
+
+// header
+.bg-space {
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.bg-adjust {
+    @include bg-adjust(16px, linear-gradient(to right, #c7307e, #43218a, #150460))
+}
+
+.header-title {
+    margin: 0;
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    h1 {
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+    }
+    .label-warning {
+        background-color: $gold-color
+    }
+    h4 {
+        margin: 6px 0;
+    }
+}
+
+.header-main {
+    margin-bottom: 12px;
+    >img {
+        max-width: 105px;
+    }
+}
+
+.header-main-info {
+    top: 52%;
+    transform: translateY(-50%);
+    margin-left: 10px;
+    p {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+.header-main-info-icons {
+    img {
+        padding-right: 5px;
+    }
+}
+
+.t-justify {
+    span {
+        font-size: 14px;
+        text-align: justify;
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 17%;
+        }
+    }
+}
+
+// main
+.bg-adjust-sub {
+    @include bg-adjust(14px, #0893e0);
+    li {
+        color: #48cbd7;
+        font-size: 14px;
+    }
+}
+
+.main-body {
+    .row {
+        &:nth-child(1) {
+            margin-bottom: 15px;
+        }
+    }
+    h2 {
+        font-size: 17px;
+    }
+    span:nth-child(6) {
+        float: right;
+    }
+}
+
+.progress-adjust {
+    border-radius: 0;
+    .progress-bar-adjust {
+        background-color: #0893e0;
+    }
+}
+
+// footer
+.footer {
+    margin-bottom: 30px;
+    h3 {
+        font-size: 15px;
+    }
+    .footer-stars {
+        margin: 15px 0;
+        span {
+            font-size: 35px;
+        }
+    }
+}
+
+@media(max-width:767px) {
+    .btn-submit {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media(max-width:374px) {
+    .header-main>img {
+        max-width: 100%;
+    }
+    .header-main-info {
+        position: relative;
+        top: 10px;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,9 @@
+// variable
+$gold-color: hsla(49, 98%, 50%, 0.97);
+$white-color: #ececec;
+
+// sass mixin
+@mixin bg-adjust($fz, $bg) {
+    font-size: $fz;
+    background: $bg;
+}
