@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
+var ghPages = require('gulp-gh-pages');
 
 // gulp sass
 
@@ -18,6 +19,11 @@ gulp.task('sass', function() {
 
 gulp.task('watch', function() {
     gulp.watch('./sourse/sass/**/*.scss', ['sass']);
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('./public/**/*')
+    .pipe(ghPages());
 });
 
 gulp.task('default', ['sass', 'watch']);
